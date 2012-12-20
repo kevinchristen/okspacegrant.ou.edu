@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+JavaScript Slideshow by Patrick Fitzgerald
+http://slideshow.barelyfitz.com/
+-->
+<html>
+	<head>
+		<title>Main Slides</title>
+		<style type="text/css">
+			<!--
+				body {
+	      		font-family:"Arial",sans-serif;
+	      		font-size:14;
+	      		margin-left:0;
+	      	}
+				*.unselectable {
+					-moz-user-select:-moz-none;
+					-khtml-user-select:none;
+					-webkit-user-select:none;
+					-o-user-select:none;
+					user-select:none;	
+				}
+				a:link, a:visited {
+	            color:#ffffff;
+	            text-decoration:none;
+	         }
+				a:active {
+	            color:#ffffff;
+	            text-decoration:none;
+	         }
+	         a:hover {
+	            color:#ffffff;
+	            text-decoration:underline;
+	         }
+	         *.slideimg {
+	         	width:655px; height:268px; filter:progid:DXImageTransform.Microsoft.Fade(); 
+		         margin-left:10; margin-right:10; margin-bottom:10; margin-top:10; border-width:0px;
+	         }
+	         *.slidetext {
+	         	vertical-align:top; background:#666666; color:#ffffff; padding-left:7px; margin-bottom:10;
+					width:655px; height:100px; padding-top:3px;
+	         }
+			-->
+		</style>
+		<script type="text/javascript" src="js/slideshow.js"></script>
+		<script type="text/javascript"> 
+			<!--
+				SLIDES = new slideshow("SLIDES");
+			
+				// Create some slides and add custom filters for Microsoft IE
+			   s = new slide('images/slides/01.jpg');
+			   s.text = "Welcome to OSGC! <br/><br/>OSGC is sponsoring Corbin Graham, an OU student chosen to be an intern at NASA's Ames Research Center this semester. Visit our News and Events Page to find out more about Corbin.";
+				SLIDES.add_slide(s);
+				s.filter = 'progid:DXImageTransform.Microsoft.Fade()';
+				 
+			   s = new slide('images/slides/02.jpg');
+			   s.text = "Welcome to the OSGC website!<br/><br/>More information about Apollo the Armadillo is coming soon!";
+			   SLIDES.add_slide(s);
+			   s.filter = 'progid:DXImageTransform.Microsoft.Fade()';
+				 
+			   s = new slide('images/slides/03.jpg');
+			   s.text = "The UAV Airshow was a huge success! Check it out at the News and Events Page";
+			   SLIDES.add_slide(s);
+			   s.filter = 'progid:DXImageTransform.Microsoft.Fade()';
+				
+			   s = new slide('images/slides/04.jpg');
+			   s.text = "OSGC presented a hands-on workshop to educators at this year's Space Center Houston SEEC in February, 2012<br/><br/>Dorinda Risenhoover, our Education Coordinator, presented along with Lianna Mueller and Rosa Denton.";
+			   SLIDES.add_slide(s);
+			   s.filter = 'progid:DXImageTransform.Microsoft.Fade()';
+				
+			   s = new slide('images/slides/05.jpg');
+			   s.text = "15 college students in Oklahoma took a trip to the NASA Kennedy Space Center in March. They were able to talk with researchers, tour labs, and see famous Kennedy attractions.<br/><br/>Visit our News & Events page for more information.";
+			   SLIDES.add_slide(s);
+			   s.filter = 'progid:DXImageTransform.Microsoft.Fade()';
+			//-->
+		</script>
+	</head>
+	<body onLoad="SLIDES.update();" bgcolor="#262620" style="margin-left:0;margin-top:0;cursor:default;">	
+		<table cellpadding="0" cellspacing="0" 
+			style="position:absolute;top:0px;left:0px;margin-left:0;width:675px;height:300px;text-align:center;background:#262620;">
+		   <tr>
+		     <td colspan="7" style="vertical-align:top;">
+		       <img NAME="SLIDESIMG" SRC="images/slides/01.jpg" class="slideimg" ALT="Slideshow image">
+		     </td>
+		   </tr>
+		   <tr>
+		   	<td colspan="7">
+			   	<table cellpadding="0" cellspacing="0" style="margin-left:0;width:675px;">
+			   		<tr>
+			   			<td style="width:10;"></td>
+							<td id="SLIDESTXT" class="slidetext"></td>
+							<td style="width:10;"></td>
+						</tr>
+					</table>
+				</td>
+		   </tr>
+		   <tr>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_1" HREF="javascript:SLIDES.goto_slide(0);SLIDES.pause()"><SPAN>1</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_2" HREF="javascript:SLIDES.goto_slide(1);SLIDES.pause()"><SPAN>2</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_3" HREF="javascript:SLIDES.goto_slide(2);SLIDES.pause()"><SPAN>3</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_4" HREF="javascript:SLIDES.goto_slide(3);SLIDES.pause()"><SPAN>4</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_5" HREF="javascript:SLIDES.goto_slide(4);SLIDES.pause()"><SPAN>5</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_play" HREF="javascript:SLIDES.next();SLIDES.play()"><SPAN>Play</SPAN></A>
+		      </td>
+		      <td style="vertical-align:bottom; padding-top:10;">
+		         <A ID="ss_pause" HREF="javascript:SLIDES.pause()"><SPAN>Pause</SPAN></A>
+		   	</td>
+		   </tr>
+		</table>
+		 
+		 
+		<script type="text/javascript"> 
+			<!--
+				if (document.images) {
+					SLIDES.image = document.images.SLIDESIMG;
+					
+					// Tell the slideshow the ID of the element
+					// that will contain the text for the slide
+					SLIDES.textid = "SLIDESTXT";
+					 
+					// Create a function to ramp up the image opacity in Mozilla
+					var fadein_opacity = 0.04;
+					var fadein_img = SLIDES.image;
+					function fadein(opacity) {
+					  if (typeof opacity != 'undefined') { fadein_opacity = opacity; }
+					  if (fadein_opacity < 0.99 && fadein_img && fadein_img.style &&
+					      typeof fadein_img.style.MozOpacity != 'undefined') {
+					 
+					    fadein_opacity += .05;
+					    fadein_img.style.MozOpacity = fadein_opacity;
+					    setTimeout("fadein()", 50);
+					  }
+					}
+					 
+					// Tell the slideshow to call our function whenever the slide is changed
+					SLIDES.post_update_hook = function() { fadein(0.04); }
+					
+					// Update the image and the text for the slideshow
+					SLIDES.update();
+				}
+			//-->
+		</script>
+	</body>
+</html>
